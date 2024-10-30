@@ -1,0 +1,105 @@
+body {
+    background: #000;
+}
+
+
+.contenedor {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+.cubo {
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg);
+    margin: 200px auto;
+}
+
+.cubo,
+.cubo>div {
+    width: 290px;
+    height: 290px;
+}
+
+.cara {
+    position: absolute;
+    border: 5px solid black;
+    opacity: 0.8;
+    display: grid;
+    place-items: center;
+}
+
+.cubo .cara:nth-child(1) {
+    background: red;
+    transform: translateZ(150px)
+}
+
+.cubo .cara:nth-child(2) {
+    background: green;
+    transform: translateZ(-150px);
+}
+
+.cubo .cara:nth-child(3) {
+    background: blue;
+    transform: translateX(-150px) rotateY(-90deg);
+}
+
+.cubo .cara:nth-child(4) {
+    background: rgb(252, 164, 0);
+    transform: translateX(150px) rotateY(-90deg)
+}
+
+.cubo .cara:nth-child(5) {
+    background: yellow;
+    transform: translateY(-150px) rotateX(-90deg);
+}
+
+.cubo .cara:nth-child(6) {
+    background: white;
+    transform: translateY(150px) rotateX(-90deg)
+}
+
+.cubo {
+    animation: giro 20s infinite linear;
+}
+
+@keyframes giro {
+    0% {transform: rotateX(-45deg) rotateY(0deg) rotateZ(0deg);}
+    25% {transform: rotateX(-45deg) rotateY(90deg) rotateZ(90deg);}
+    50% {transform: rotateX(-45deg) rotateY(180deg) rotateZ(180deg);}
+    75% {transform: rotateX(-45deg) rotateY(270deg) rotateZ(270deg);}
+    100% {transform: rotateX(-45deg) rotateY(360deg) rotateZ(360deg);}
+    }
+
+    .fa-brands {
+        font-size: 80px;
+    }
+
+p {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a, .fa-brands{
+    text-decoration: none;
+    color: black;
+    animation: fade 3s infinite; ;
+}
+
+a:hover {
+    transform: scale(1.05);
+    animation: scale 1s infinite;
+}
+
+@keyframes scale {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
+@keyframes fade {
+    0% {color: black;}
+    50% {color: rgb(46, 43, 43);
+    opacity: 0.7;}
+    100% {color: black;}
+}
+
