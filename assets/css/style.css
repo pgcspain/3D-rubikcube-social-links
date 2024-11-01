@@ -7,6 +7,9 @@ body {
 #draggable {
     position: absolute;
     cursor: move;
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
 }
 
 .contenedor {
